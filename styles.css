@@ -295,4 +295,59 @@ th{
   .grid{ grid-template-columns: 1fr; }
   .hero__meta{ grid-template-columns: 1fr; }
   .miniGrid{ grid-template-columns: 1fr; }
+
+}
+
+/* ====== MODO PDF / IMPRESIÓN (Reveal) ====== */
+@media print {
+  /* Fuerza colores visibles */
+  .reveal, .reveal * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Fondo blanco y texto oscuro para PDF legible */
+  .reveal {
+    color: #111 !important;
+  }
+
+  .reveal .slides section,
+  .reveal .slide,
+  .reveal .present {
+    background: #fff !important;
+  }
+
+  /* Texto */
+  .reveal h1, .reveal h2, .reveal h3,
+  .reveal p, .reveal li, .reveal td, .reveal th,
+  .reveal .muted, .reveal .fine, .reveal .topbar__title, .reveal .topbar__tag {
+    color: #111 !important;
+    text-shadow: none !important;
+  }
+
+  /* Cards se ven como tarjetas claras */
+  .card, .imageCard, .meta__card, .miniCard, .callout, .stat {
+    background: #f6f7f9 !important;
+    border: 1px solid #e2e6ea !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Overlay de portada no oscurezca */
+  .hero__overlay {
+    background: none !important;
+  }
+
+  /* Imágenes sin sombras pesadas */
+  .imageCard img, .hero__bg img {
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  /* Por si los pills quedan claros */
+  .pill, .topbar__tag {
+    color: #111 !important;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+  }
 }
